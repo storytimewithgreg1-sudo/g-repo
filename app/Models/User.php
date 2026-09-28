@@ -29,4 +29,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function user(){
+        return $this->hasMany(Reports::class, "user_id");
+    }
+
+    public function download(){
+        return $this->hasMany(Download::class, "user_id");
+    }
+
+    public function paper(){
+        return $this->hasMany(Paper::class, "uploaded_by");
+    }
+
+    
 }
