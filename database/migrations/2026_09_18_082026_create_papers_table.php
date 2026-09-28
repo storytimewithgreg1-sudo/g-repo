@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('uploaded_by')->constrained('users')->cascadeOnDelete();
             $table->string('exam_type');
+            $table->foreignId('course_id')->constrained();
             $table->string('file_path');
             $table->string('name');
             $table->string('year')->nullable();
